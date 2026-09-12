@@ -1,0 +1,59 @@
+# Supply Chain Operations & Logistics Dashboard
+
+## Cross-Functional Executive Summary
+This project is an end-to-end data analytics solution designed to provide leadership with a unified view of supply chain health. By extracting and normalizing over 500,000 rows of retail data using SQL and visualizing the metrics in Power BI and Excel, this dashboard identifies operational bottlenecks from inbound procurement to outbound fulfillment and reverse logistics.
+
+### Key Operational Findings
+* **Inbound Operations (Supplier Reliability):** Overall network lead time variance averages 1.00 days late. Granular OTIF (On-Time In-Full) tracking reveals opportunities to consolidate purchase orders with top-performing partners to reduce buffer stock requirements.
+* **Warehouse Management (Inventory Integrity):** Cycle count audits revealed isolated SKUs falling below the 95% record accuracy threshold. By implementing automated variance triggers, physical inventory teams can pivot from time-consuming full-facility counts to targeted daily audits on high-risk items.
+* **Outbound & Reverse Logistics:** After normalizing outbound flow data and filtering out administrative write-offs, genuine product returns were isolated. The highest physical return volumes are concentrated in a specific subset of decorative SKUs, indicating a need for immediate quality control review prior to the next procurement cycle.
+
+---
+
+## Tech Stack & Architecture
+* **Database Management:** MySQL (Data extraction, normalization, and handling missing variables)
+* **Business Intelligence:** Power BI (Data modeling, interactive visualizations, and reporting)
+* **Data Processing:** DAX (Custom measures for throughput and operational flow), Power Query
+* **Data Analysis:** Microsoft Excel (PivotTables, conditional formatting, calculated variance tracking)
+
+---
+
+## Dashboard Architecture & Business Logic
+
+### Page 1: Supplier Performance & Compliance
+Designed to track vendor reliability and inbound logistics efficiency.
+* **Overall OTIF (On-Time In-Full) Rate:** Aggregated tracking of supplier delivery success.
+* **Lead Time Variance:** Measures the average delay in days between expected and actual delivery dates.
+* **Defect Tracking:** Highlights non-compliant units by supplier using cross-filtered clustered bar charts to instantly identify poor-performing vendors.
+
+![Supplier Performance Page](Link_to_your_Page1_Screenshot.png)
+
+### Page 2: Inventory Health & Cycle Counts
+Focuses on warehouse stock reconciliation, shrinkage risks, and physical audit prioritization.
+* **Stock Variance Analysis:** Identifies SKUs with the highest physical-to-system stock discrepancies.
+* **Cycle Count Accuracy Matrix:** Compares physical counts versus system records.
+* **Automated Alerting:** Utilizes conditional formatting rules to automatically flag inventory items falling below a 95% accuracy threshold in red, directing immediate operational focus for physical audits.
+
+![Inventory Health Page](Link_to_your_Page2_Screenshot.png)
+
+### Page 3: Outbound Operations & Reverse Logistics
+Analyzes warehouse throughput and filters out administrative noise to uncover genuine product return trends.
+* **Outbound Volume Trend:** A drill-down time-series analysis (Year > Quarter > Month > Day) tracking daily warehouse throughput and operational peaks.
+* **Return Risk Profiling:** Isolates items causing reverse logistics bottlenecks. 
+* **Data Cleaning Implementation:** Advanced visual-level filtering was applied to strip out administrative warehouse adjustments (e.g., "missing", "given away", "Zebra invcing error"), ensuring the visual exclusively highlights genuine product returns.
+
+![Outbound & Returns Page](Link_to_your_Page3_Screenshot.png)
+
+---
+
+## Key Technical Implementations
+
+### DAX Measures for Directional Flow
+Custom DAX was written to separate standard outbound throughput from reverse logistics within the same unified sales table:
+
+```dax
+-- Calculating standard outbound shipping volume
+Total Outbound = CALCULATE(SUM(sales[Quantity]), sales[Quantity] > 0)
+
+-- Isolating negative quantities for reverse logistics tracking
+Total Returns = CALCULATE(SUM(sales[Quantity]), sales[Quantity] < 0)
