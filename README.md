@@ -33,7 +33,7 @@ Designed to track vendor reliability and inbound logistics efficiency.
 * **Lead Time Variance:** Measures the average delay in days between expected and actual delivery dates.
 * **Defect Tracking:** Highlights non-compliant units by supplier using cross-filtered clustered bar charts to instantly identify poor-performing vendors.
 
-![Supplier Performance Page](Link_to_your_Page1_Screenshot.png)
+![Supplier Performance Page](https://github.com/NMahmood65/supply-chain-analysis/blob/main/assets/page1.png)
 
 ### Page 2: Inventory Health & Cycle Counts
 Focuses on warehouse stock reconciliation, shrinkage risks, and physical audit prioritization.
