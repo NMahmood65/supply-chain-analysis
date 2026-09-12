@@ -94,6 +94,7 @@ DIVIDE(
     COUNTROWS('inventory'),
     0
 )
+```
 
 ## Data Cleansing & Transformation
 * Replaced NULL or blank vendor IDs and missing order quantities in the raw SQL database prior to BI import.
