@@ -81,6 +81,7 @@ After completing the SQL ETL pipeline, the clean dataset was connected to Excel 
 * **On-Time In-Full (OTIF) Status:** Engineered a nested logical formula to flag individual orders. Deliveries were marked as "OTIF" only if the actual delivery date was on or before the expected date, and the received quantity perfectly matched the ordered quantity: 
   `=IF(AND(E2<=D2, F2=G2), "OTIF", "Failed")`
 * **Inventory Record Accuracy:** Modeled by filtering physical cycle count data against system inventory records, isolating SKUs with a variance of exactly zero to determine true warehouse stock health.
+  
 ```
 
 ## Data Cleansing & Transformation
