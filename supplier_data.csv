@@ -1,0 +1,6 @@
+PO_Number,SKU,Supplier_Name,Expected_Delivery_Date,Actual_Delivery_Date,Qty_Ordered,Qty_Received,Defect_Qty
+PO-1001,85123A,TechSource UK,2023-10-01,2023-10-03,1000,950,15
+PO-1002,71053,Global Components,2023-10-05,2023-10-05,500,500,2
+PO-1003,84406B,TechSource UK,2023-10-10,2023-10-10,2000,2000,50
+PO-1004,84029G,EuroLogistics,2023-10-12,2023-10-15,750,700,0
+PO-1005,84029E,EuroLogistics,2023-10-14,2023-10-14,600,600,5
