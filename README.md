@@ -3,6 +3,13 @@
 ## Cross-Functional Executive Summary
 This project is an end-to-end data analytics solution designed to provide leadership with a unified view of supply chain health. By extracting and normalizing over 500,000 rows of retail data using SQL and visualizing the metrics in Power BI and Excel, this dashboard identifies operational bottlenecks from inbound procurement to outbound fulfillment and reverse logistics.
 
+![Supplier Performance Dashboard](assets/Page1.png)
+
+![Inventory Health Dashboard](assets/Page2.png)
+
+![Outbound and Returns Dashboard](assets/Page3.png)
+
+
 ### Key Operational Findings
 * **Inbound Operations (Supplier Reliability):** Overall network lead time variance averages 1.00 days late. Granular OTIF (On-Time In-Full) tracking reveals opportunities to consolidate purchase orders with top-performing partners to reduce buffer stock requirements.
 * **Warehouse Management (Inventory Integrity):** Cycle count audits revealed isolated SKUs falling below the 95% record accuracy threshold. By implementing automated variance triggers, physical inventory teams can pivot from time-consuming full-facility counts to targeted daily audits on high-risk items.
@@ -87,6 +94,6 @@ Total Returns = CALCULATE(SUM(sales[Quantity]), sales[Quantity] < 0)
 ---
 
 ## How to View This Project
-* View the comprehensive PDF report: [`supply_Chain_Dashboard_Report.pdf`](assets/supply_Chain_Dashboard_Report.pdf)
-* Download the raw `.pbix` file to interact with the DAX models: [`supply_Chain_Analysis.pbix`](supply_Chain_Analysis.pbix)
+* **View the comprehensive PDF report:** [supply_Chain_Dashboard_Report.pdf](assets/supply_Chain_Dashboard_Report.pdf)
+* **Download the interactive dashboard:** [supply_Chain_Analysis.pbix](supply_Chain_Analysis.pbix)
 
