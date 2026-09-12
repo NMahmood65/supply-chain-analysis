@@ -46,6 +46,20 @@ Analyzes warehouse throughput and filters out administrative noise to uncover ge
 
 ---
 
+## Repository Structure
+* `/sql_queries/`: Contains the sequential SQL scripts used to process the data:
+  * `01_database_setup.sql`
+  * `02_rebuild_sales_table.sql`
+  * `03_import_sales_data.sql`
+  * `04_clean_sales_dates.sql`
+  * `05_clean_item_descriptions.sql`
+  * `06_handle_missing_descriptions.sql`
+  * `07_create_analytical_views.sql`
+* `/data/`: Contains the secondary Excel data models and scorecard exports.
+* `/assets/`: Stores the PDF dashboard export and high-resolution screenshots of the Power BI interface.
+* `supply_Chain_Analysis.pbix`: The core Power BI dashboard file containing all DAX measures and interactive visuals.
+
+
 ## Key Technical Implementations
 
 ### DAX Measures for Directional Flow
