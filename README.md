@@ -41,7 +41,7 @@ Focuses on warehouse stock reconciliation, shrinkage risks, and physical audit p
 * **Cycle Count Accuracy Matrix:** Compares physical counts versus system records.
 * **Automated Alerting:** Utilizes conditional formatting rules to automatically flag inventory items falling below a 95% accuracy threshold in red, directing immediate operational focus for physical audits.
 
-![Inventory Health Page](Link_to_your_Page2_Screenshot.png)
+![Inventory Health Page](assets/page2.png)
 
 ### Page 3: Outbound Operations & Reverse Logistics
 Analyzes warehouse throughput and filters out administrative noise to uncover genuine product return trends.
@@ -49,7 +49,7 @@ Analyzes warehouse throughput and filters out administrative noise to uncover ge
 * **Return Risk Profiling:** Isolates items causing reverse logistics bottlenecks. 
 * **Data Cleaning Implementation:** Advanced visual-level filtering was applied to strip out administrative warehouse adjustments (e.g., "missing", "given away", "Zebra invcing error"), ensuring the visual exclusively highlights genuine product returns.
 
-![Outbound & Returns Page](Link_to_your_Page3_Screenshot.png)
+![Outbound & Returns Page](assets/page3.png)
 
 ---
 
