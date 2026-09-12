@@ -82,7 +82,6 @@ After completing the SQL ETL pipeline, the clean dataset was connected to Excel 
   `=IF(AND(E2<=D2, F2=G2), "OTIF", "Failed")`
 * **Inventory Record Accuracy:** Modeled by filtering physical cycle count data against system inventory records, isolating SKUs with a variance of exactly zero to determine true warehouse stock health.
   
-```
 
 ## Data Cleansing & Transformation
 * Replaced NULL or blank vendor IDs and missing order quantities in the raw SQL database prior to BI import.
