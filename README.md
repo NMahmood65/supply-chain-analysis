@@ -85,14 +85,14 @@ After completing the SQL ETL pipeline, the clean dataset was connected to Excel 
 
 ## Data Cleansing & Transformation
 * Replaced NULL or blank vendor IDs and missing order quantities in the raw SQL database prior to BI import.
-* Structured relational models connecting `v_supplier_metrics`, `v_inventory_accuracy`, and `sales` fact tables to enable dynamic, page-wide cross-filtering.
+* Structured relational models connecting `v_supplier_metrics`, `v_inventory_accuracy`, and `sales` fact tables to enable dynamic slicing.
 
 ---
 
 ## Strategic Recommendations
-1. **Targeted Vendor Renegotiations:** Leverage the supplier scorecard data during contract renewals to penalize or replace vendors consistently breaching the 5% defect rate or missing delivery windows.
-2. **Dynamic Cycle Counting:** Shift warehouse labor hours toward daily audits of the specific SKUs glowing red on the accuracy matrix to aggressively reduce inventory shrinkage.
-3. **Cross-Departmental Quality Review:** Initiate a joint review with Procurement and Quality Assurance focusing on the top three returned items to determine if the root cause is poor supplier manufacturing or transit damage.
+1. **Targeted Vendor Renegotiations:** Leverage the supplier scorecard data during contract renewals to penalize or replace underperforming vendors.
+2. **Dynamic Cycle Counting:** Shift warehouse labor hours toward daily audits of the specific SKUs glowing red on the accuracy report.
+3. **Cross-Departmental Quality Review:** Initiate a joint review with Procurement and Quality Assurance focusing on the top three defect-producing suppliers.
 
 ---
 
