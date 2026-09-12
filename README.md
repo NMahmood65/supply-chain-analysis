@@ -57,3 +57,21 @@ Total Outbound = CALCULATE(SUM(sales[Quantity]), sales[Quantity] > 0)
 
 -- Isolating negative quantities for reverse logistics tracking
 Total Returns = CALCULATE(SUM(sales[Quantity]), sales[Quantity] < 0)
+
+
+## Data Cleansing & Transformation
+* Replaced NULL or blank vendor IDs and missing order quantities in the raw SQL database prior to BI import.
+* Structured relational models connecting `v_supplier_metrics`, `v_inventory_accuracy`, and `sales` fact tables to enable dynamic, page-wide cross-filtering.
+
+---
+
+## Strategic Recommendations
+1. **Targeted Vendor Renegotiations:** Leverage the supplier scorecard data during contract renewals to penalize or replace vendors consistently breaching the 5% defect rate or missing delivery windows.
+2. **Dynamic Cycle Counting:** Shift warehouse labor hours toward daily audits of the specific SKUs glowing red on the accuracy matrix to aggressively reduce inventory shrinkage.
+3. **Cross-Departmental Quality Review:** Initiate a joint review with Procurement and Quality Assurance focusing on the top three returned items to determine if the root cause is poor supplier manufacturing or transit damage.
+
+---
+
+## How to View This Project
+* View the comprehensive PDF report: [`supply_Chain_Dashboard_Report.pdf`](assets/supply_Chain_Dashboard_Report.pdf)
+* Download the raw `.pbix` file to interact with the DAX models: [`supply_Chain_Analysis.pbix`](supply_Chain_Analysis.pbix)
