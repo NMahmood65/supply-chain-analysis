@@ -3,11 +3,11 @@
 ## Cross-Functional Executive Summary
 This project is an end-to-end data analytics solution designed to provide leadership with a unified view of supply chain health. By extracting and normalizing over 500,000 rows of retail data using SQL and visualizing the metrics in Power BI and Excel, this dashboard identifies operational bottlenecks from inbound procurement to outbound fulfillment and reverse logistics.
 
-![Supplier Performance Dashboard](assets/Page1.png)
+![Supplier Performance Dashboard](assets/page1.png)
 
-![Inventory Health Dashboard](assets/Page2.png)
+![Inventory Health Dashboard](assets/page2.png)
 
-![Outbound and Returns Dashboard](assets/Page3.png)
+![Outbound and Returns Dashboard](assets/page3.png)
 
 
 ### Key Operational Findings
