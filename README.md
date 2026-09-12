@@ -74,6 +74,27 @@ Total Outbound = CALCULATE(SUM(sales[Quantity]), sales[Quantity] > 0)
 Total Returns = CALCULATE(SUM(sales[Quantity]), sales[Quantity] < 0)
 ```
 
+### Key Performance Indicators (KPIs)
+
+Custom DAX was utilized to calculate core operational metrics for executive monitoring, focusing on fulfillment reliability and physical stock integrity:
+
+```dax
+-- Calculating On-Time In-Full (OTIF) delivery rate
+OTIF % = 
+DIVIDE(
+    CALCULATE(COUNTROWS('sales'), 'sales'[Delivery_Status] = "On Time" && 'sales'[Fulfillment_Status] = "In Full"),
+    COUNTROWS('sales'),
+    0
+)
+
+-- Calculating Inventory Record Accuracy based on cycle count variances
+Inventory Record Accuracy % = 
+DIVIDE(
+    CALCULATE(COUNTROWS('inventory'), 'inventory'[Variance] = 0),
+    COUNTROWS('inventory'),
+    0
+)
+
 ## Data Cleansing & Transformation
 * Replaced NULL or blank vendor IDs and missing order quantities in the raw SQL database prior to BI import.
 * Structured relational models connecting `v_supplier_metrics`, `v_inventory_accuracy`, and `sales` fact tables to enable dynamic, page-wide cross-filtering.
