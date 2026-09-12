@@ -57,7 +57,7 @@ Total Outbound = CALCULATE(SUM(sales[Quantity]), sales[Quantity] > 0)
 
 -- Isolating negative quantities for reverse logistics tracking
 Total Returns = CALCULATE(SUM(sales[Quantity]), sales[Quantity] < 0)
-
+```
 
 ## Data Cleansing & Transformation
 * Replaced NULL or blank vendor IDs and missing order quantities in the raw SQL database prior to BI import.
@@ -75,3 +75,4 @@ Total Returns = CALCULATE(SUM(sales[Quantity]), sales[Quantity] < 0)
 ## How to View This Project
 * View the comprehensive PDF report: [`supply_Chain_Dashboard_Report.pdf`](assets/supply_Chain_Dashboard_Report.pdf)
 * Download the raw `.pbix` file to interact with the DAX models: [`supply_Chain_Analysis.pbix`](supply_Chain_Analysis.pbix)
+
