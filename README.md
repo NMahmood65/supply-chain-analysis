@@ -75,25 +75,12 @@ Total Returns = CALCULATE(SUM(sales[Quantity]), sales[Quantity] < 0)
 ```
 
 ### Key Performance Indicators (KPIs)
+After completing the SQL ETL pipeline, the clean dataset was connected to Excel to evaluate core operational metrics line-by-line:
 
-Custom DAX was utilized to calculate core operational metrics for executive monitoring, focusing on fulfillment reliability and physical stock integrity:
-
-```dax
--- Calculating On-Time In-Full (OTIF) delivery rate
-OTIF % = 
-DIVIDE(
-    CALCULATE(COUNTROWS('sales'), 'sales'[Delivery_Status] = "On Time" && 'sales'[Fulfillment_Status] = "In Full"),
-    COUNTROWS('sales'),
-    0
-)
-
--- Calculating Inventory Record Accuracy based on cycle count variances
-Inventory Record Accuracy % = 
-DIVIDE(
-    CALCULATE(COUNTROWS('inventory'), 'inventory'[Variance] = 0),
-    COUNTROWS('inventory'),
-    0
-)
+* **Lead Time Variance:** Calculated the exact deviation in delivery schedules by subtracting the expected delivery date from the actual delivery date (`=E2-D2`), allowing for the tracking of average supplier delays.
+* **On-Time In-Full (OTIF) Status:** Engineered a nested logical formula to flag individual orders. Deliveries were marked as "OTIF" only if the actual delivery date was on or before the expected date, and the received quantity perfectly matched the ordered quantity: 
+  `=IF(AND(E2<=D2, F2=G2), "OTIF", "Failed")`
+* **Inventory Record Accuracy:** Modeled by filtering physical cycle count data against system inventory records, isolating SKUs with a variance of exactly zero to determine true warehouse stock health.
 ```
 
 ## Data Cleansing & Transformation
